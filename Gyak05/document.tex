@@ -1,0 +1,56 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[T1]{fontenc}
+\PassOptionsToPackage{defaults=hu-min}{magyar.ldf}
+\usepackage[magyar]{babel}
+\usepackage{mathtools,amssymb,paralist}
+\DeclareMathOperator{\diff}{d\!}
+\DeclareMathOperator{\ctg}{ctg}
+\begin{document}
+	Legyen $X$ egy halmaz. Az $\mathcal{A} \subset\mathcal{P}(X)$ halmazrendszert $\sigma$-algebrának nevezzük, ha
+	\begin{compactenum}
+		\item $X \in\mathcal{A}$,
+		\item $\overline{A}=X\setminus A \in\mathcal{A} \quad\forall A\in\mathcal{A}$,
+		\item $\bigcup_{i=1}^{\infty}A_{i} \in\mathcal{A}$, ha $A_{i} \in\mathcal{A}\ (i \in \mathbb{N})$.
+	\end{compactenum}
+	Ekkor az $(X, \mathcal{A})$ rendezett párt \emph{mérhető térnek}, az $\mathcal{A}$ elemeit \emph{mérhető halmazoknak} nevezzük.
+	
+	A $\mu\colon \mathcal{A} \rightarrow [0,\infty]$ függvényt \emph{mértéknek} nevezzük az $(X,\mathcal{A})$
+	mérhető téren, ha $\mu(\emptyset) = 0$ és
+	\begin{equation*}
+		\mu\left(\bigcup_{i=1}^{\infty}A_{i}\right)=\sum_{i=1}^{\infty}\mu (A_{i})
+	\end{equation*}
+	minden $A_{i} \in\mathcal{A}\ (i\in\mathbb{N})$ diszjunkt rendszerre. Ekkor $(X,\mathcal{A},\mu)$-t \emph{mértéktérnek}, $\mu(A)$-t az $A$ mértékének nevezzük.
+	
+	Legyen $X$ egy halmaz, $\mathcal{H} \subset \mathcal{P}(X), \nu\colon \mathcal{H}\rightarrow [0,\infty]$ és
+	$\mu$ a $\nu$-höz tartozó külső mérték. $B \subset X$ pontosan akkor $\mu$-mérhető ha,
+	\begin{equation}\label{eq-add}
+		\nu(A) \geq \mu (A\cap B) + \mu(A\setminus B) \quad \forall A\in\mathcal{H}.
+	\end{equation}
+	\Az{\eqref{eq-add}} szükségessége triviálisan teljesül.
+	
+	Ha $X$ egy halmaz és $A \subset X$, akkor az
+	\begin{equation*}
+		I_{A}\colon X \rightarrow \mathbb{R},\quad I_{A}(x):=
+		\begin{cases}
+			1,& \text{ha}\ x\ \in A \\
+			0,& \text{különben}
+		\end{cases}
+	\end{equation*}
+	függvényt  az $A$ \emph{karakterisztikus függvénynek} nevezzük.
+	
+	Legyen $(X, \mathcal{A}, \mu)$ mértéktér és $g,f,f_{n}\colon X \rightarrow \mathbb{R}_b\ (n=1,  2, 3,\dots)$ mérhető függvények. Ha $g$ integrálható és $|f_{n}| \leq g\ \forall_{n} \in \mathbb{N}$-re, akkor
+	\begin{equation*}
+		\lim_{n\rightarrow\infty}\int f_{n} \diff\mu = \int\lim_{n\rightarrow\infty}f_{n}\diff\mu.
+	\end{equation*}
+	A mérték folytonossága a következő miatt igaz:
+	\begin{align*}
+		\mu\left(\bigcup_{i=1}^{\infty}A_{i}\right)&=\mu (A_{i}) + \sum_{i=1}^{\infty}\mu (A_{i+1} \setminus A_{i}) = \\
+		&= \lim_{n\to\infty} \bigl(\mu(A_{1})+\mu(A_{2}) - \mu(A_{1}) + \dots + \mu(A_{n}) - \mu(A_{n-1})\bigr).
+	\end{align*}
+
+	A koszinusz és szinusz függvények hányadosát \emph{kotangensnek} nevezzük,
+	azaz
+	\begin{equation*}
+		\ctg(x)=\frac{\cos(x)}{\sin(x)}.
+	\end{equation*}
+\end{document}

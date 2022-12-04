@@ -1,0 +1,53 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[T1]{fontenc}
+\PassOptionsToPackage{defaults=hu-min}{magyar.ldf}
+\usepackage[magyar]{babel}
+\usepackage{listingsutf8,xcolor,caption}
+\renewcommand{\lstlistingname}{kód}
+\lstdefinestyle{user1}{
+inputencoding=utf8/latin2,
+language=Delphi,
+basicstyle=\footnotesize,
+numbers=left,
+xleftmargin=2cm,
+xrightmargin=2cm,
+breaklines,
+postbreak=\hbox{$\color{red}\hookrightarrow\ $},
+backgroundcolor=\color{gray!30},
+frame=tblr,
+framesep=3pt,
+keywordstyle=\bfseries\color{blue},
+commentstyle=\it\color{teal},
+%keywords=[3]{Windows,Messages},
+%keywordstyle=[3]\color{red}
+}
+\lstdefinestyle{user2}{
+	inputencoding=utf8/latin2,
+	language=Delphi,
+	basicstyle=\footnotesize\color{white},
+	numbers=left,
+	xleftmargin=1cm,
+	xrightmargin=1cm,
+	breaklines,
+	postbreak=\hbox{$\color{lime}\hookrightarrow\ $},
+	backgroundcolor=\color{darkgray},
+	frame=tblr,
+	framesep=3pt,
+	keywordstyle=\bfseries\color{magenta},
+	commentstyle=\it\color{gray},
+	%keywords=[3]{Windows,Messages},
+	%keywordstyle=[3]\color{red}
+}
+\begin{document}
+	\verb|\emph{kiemelendő szöveg}| és \verb*+\verb|verbatim szöveg|+
+	\begin{verbatim*}
+		többsoros
+		    verbatim szöveg
+	\end{verbatim*}
+	\lstinputlisting[style=user1,caption={Egy Delphi kód},label=kod-delphi]{prog.pas}
+	\lstinputlisting[style=user2,caption={Egy másik Delphi kód},label=masik-delphi]{prog.pas}
+	
+	Lásd \az{\ref{kod-delphi}}.~kódban
+	
+	Lásd \az{\ref{masik-delphi}}.~kódban
+\end{document}

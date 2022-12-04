@@ -1,0 +1,38 @@
+\documentclass[12pt,twoside]{report}
+\usepackage[T1]{fontenc}
+\usepackage{fancyhdr}
+\usepackage[unicode,bookmarksnumbered,colorlinks,linktocpage,allcolors=blue]{hyperref}
+\usepackage[a4paper,top=40mm,bottom=40mm,inner=40mm,outer=30mm, headheight=15pt,headsep=8mm]{geometry}
+\PassOptionsToPackage{defaults=hu-min}{magyar.ldf}
+\usepackage[magyar]{babel}
+\usepackage{hulipsum}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[EL,OR]{\thepage}
+\fancyhead[ER]{\nouppercase{\small\sffamily\leftmark}}
+\fancyhead[OL]{\nouppercase{\small\sffamily\rightmark}}
+\begin{document}
+	\title{Példa a report dokumentumosztály
+		használatára}
+	\author{Szerző neve}
+	\date{évszám}
+	\maketitle
+	\tableofcontents
+\chapter*{Bevezetés}
+\markboth{}{}
+\hulipsum
+\chapter{Fejezet címe}\label{fejezet-xy}
+\section{Szakasz címe}
+\hulipsum
+
+Lásd még \cite{FAZEKAS}, illetve \cite{DAROCZY}[27.~oldal]. Ajánlott feladatgyűjtemények: \cite{DENKINGER,SOLT}.
+
+Lásd \az{\ref{fejezet-xy}}.~fejezetet (\az{\pageref{fejezet-xy}}.~oldalon).
+\begin{thebibliography}{4}
+\bibitem{DAROCZY} Daróczy Zoltán: \emph{Mérték és integrál}, Budapest, 1984, Tankönyvkiadó.
+\bibitem{DENKINGER} Denkinger Géza: \emph{Valószínűségszámítási gyakorlatok}, Budapest, 1986, Tankönyvkiadó.
+\bibitem{FAZEKAS} Fazekas István: \emph{Valószínűségszámítás}, Debrecen, 2000, Debreceni Egyetem
+Kossuth Egyetemi Kiadója.
+\bibitem{SOLT} Solt György: \emph{Valószínűségszámítás}, Budapest, 1993, Műszaki Könyvkiadó.
+\end{thebibliography}
+\end{document}

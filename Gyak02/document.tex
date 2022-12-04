@@ -1,0 +1,49 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[T1]{fontenc}
+\PassOptionsToPackage{defaults=hu-min}{magyar.ldf}
+\usepackage[magyar]{babel}
+\renewcommand{\theenumi}{\Roman{enumi}}
+\renewcommand{\labelenumi}{\textbf{\theenumi.}}
+\renewcommand{\theenumii}{\arabic{enumii}}
+\renewcommand{\labelenumii}{\textit{(\theenumii)}}
+\footnotestyle{rule=fourth}
+\begin{document}
+\begin{center}
+	\textbf{Feladatok}
+\end{center}
+\begin{enumerate}
+	\item Hány olyan tompaszögű háromszög van, melyben a szögek mérőszáma fokokban három különböző egész szám?
+	\begin{enumerate}
+		\item Adjon részletes indoklást!
+		\item Szerkessze meg az egyik megoldást!
+	\end{enumerate}
+	\item Mi a feltétele annak, hogy egy derékszögű háromszög súlyvonalaiból, mint oldalakból szerkesztett háromszög derékszögű legyen?
+	\begin{enumerate}
+		\item Oldja meg úgy is a feladatot, ha az egyik oldalról tudjuk, hogy 3\,cm hosszú!
+		\item Sorolja fel a felhasznált tételek neveit!
+	\end{enumerate}
+	\item Bizonyítsa be, hogy két ikerprímszám összege osztható 12-vel, ha a prímszámok 3-nál nagyobbak!
+	\begin{enumerate}
+		\item Írja le az ikerprímszám definícióját!\footnote{Lásd például Kiss`–-Mátyás könyvben.}
+		\item Mit jelent a tökéletes szám fogalma?
+	\end{enumerate}
+\end{enumerate}
+\begin{center}
+	\textbf{Táblázat}
+\end{center}
+\begin{table}[!ht]
+\centering
+	\begin{tabular}{|l|r|r|r|r|}
+	\multicolumn{1}{c}{}&\multicolumn{4}{c}{év} \\
+	\cline{2-5}
+	\multicolumn{1}{c|}{}&\multicolumn{1}{c}{\emph{2008}}&\multicolumn{1}{c}{\emph{2009}}&\multicolumn{1}{c}{\emph{2010}}&\multicolumn{1}{c|}{\emph{2011}}\\
+	\hline
+	\emph{jövedelem (Ft)}& 994\,000 & 1\,231\,500 & 1\,525\,410 & 2\,321\,600 \\
+	\emph{járulék (Ft)}& 165\,000 & 194\,950 & 215\,750 & 235\,850 \\
+	\hline
+\end{tabular}
+\caption{A jövedelem és járulékok kimutatása}
+\label{table-jovedelem}
+\end{table}
+\Az{\ref{table-jovedelem}}.~táblázat\footnote{A táblázat számát kereszthivatkozásként írja be!} természetesen kitalált értékeket tartalmaz, csak a gyakorlás kedvéért kellenek.
+\end{document}

@@ -1,0 +1,49 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[T1]{fontenc}
+\PassOptionsToPackage{defaults=hu-min}{magyar.ldf}
+\usepackage[magyar]{babel}
+\usepackage{hulipsum,amsthm,amssymb,mathtools}
+%\renewcommand{\qedsymbol}{$\blacksquare$}
+\newtheorem{tetel}{Tétel}[section]
+\newtheorem{lemma}[tetel]{Lemma}
+\theoremstyle{definition}
+\newtheorem{defin}[tetel]{Definíció}
+\theoremstyle{remark}
+\newtheorem{megj}[tetel]{Megjegyzés}
+\begin{document}
+	\title{Cikk címe}
+	\author{Szerző neve}
+	\date{2021. augusztus 12.}
+	\maketitle
+\begin{abstract}
+	\hulipsum[1]
+	\section{Szakasz címe}
+	\subsection{Alszakasz címe}
+	\hulipsum
+	\begin{tetel}
+		Tétel szövege
+	\end{tetel}
+	\begin{proof}
+		Bizonyítás szövege
+	\end{proof}
+	\begin{defin}
+		Definíció szövege
+	\end{defin}
+	\begin{tetel}[Pitagorasz]\label{tetel-Pitagorasz}
+		Tétel szövege
+	\end{tetel}
+	\begin{lemma}
+		Lemma szövege
+	\end{lemma}
+	\begin{proof}[\Az{\ref{tetel-Pitagorasz}}.~tétel bizonyítása]
+		Bizonyítás szövege
+		\begin{equation*}
+			a^2+b^2=c^2 \qedhere
+		\end{equation*}
+	\end{proof}
+	\begin{megj}
+		Megjegyzés szövege
+	\end{megj}
+	\paragraph{Paragrafus címe} Paragrafus szövege
+\end{abstract}
+\end{document}

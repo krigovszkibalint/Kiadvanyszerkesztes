@@ -1,0 +1,28 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[T1]{fontenc}
+\PassOptionsToPackage{defaults=hu-min}{magyar.ldf}
+\usepackage[magyar]{babel}
+\usepackage{graphicx, url}
+\footnotestyle{rule=fourth}
+\begin{document}
+\Az{\ref{figure-TeXszimb}}.~ábrán látható oroszlánt \textsc{Duane Bibby} –- neves amerikai grafikus –- tervezte. A kép innen letölthető:
+\begin{center}
+	\url{https://tomacstibor.uni-eszterhazy.hu/tananyagok/lion.pdf}
+\end{center}
+Ez az 5\,cm széles kép ma már a \LaTeX, pontosabban a \LaTeXe\ szimbólumává is vált.
+\begin{figure}[!ht]
+	\centering
+		\includegraphics[width=5cm]{kacsa}
+		\caption{A \TeX\ szimbóluma}
+\label{figure-TeXszimb}
+\end{figure}
+
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=5cm,angle=90,origin=c]{kacsa}%
+	\includegraphics[width=5cm,angle=-90,origin=c]{kacsa}
+	\caption{A \TeX\ szimbólum elforgatva}
+	\label{figure-TeXszimb-forgatva}
+\end{figure}
+\Az{\pageref{figure-TeXszimb-forgatva}}.~oldalon látható \ref{figure-TeXszimb-forgatva}.~ábrát úgy kaptuk, hogy \az{\ref{figure-TeXszimb}}.~ábrát 90 illetve $-90$ fokkal elforgattuk a középpontja körül.\footnote{Az oldalon található hivatkozásokat automatikus kereszthivatkozásként illesszük a dokumentumba!}
+\end{document}
